@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a th:href="@{/}">Form</a>
+        <a th:href="@{/grades}">Grades</a>
+    </div>
+    <table>
+        <tr>
+            <th>Student</th>
+            <th>Subject</th>
+            <th>Score</th>
+        </tr>
+        <tr th:each="student: ${grades}">
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.subject}"></td>
+            <td th:text="${student.score}"></td>
+            <td><a th:href="@{/?(id=${student.id})}" role="button">Update</a></td>
+        </tr>
+        
+    </table>
+</body>
+</html>
